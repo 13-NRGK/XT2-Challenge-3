@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+	    <meta charset="UTF-8">
+	    <meta name="viewport" content="width=device-width, initial-scale=1">
+	    <title>SpaceX Landingspot</title>
+	    <link rel="stylesheet" href="styles/main.css">
+	    <link rel="stylesheet" href="https://maxst.icons8.com/vue-static/landings/line-awesome/line-awesome/1.3.0/css/line-awesome.min.css">
+	    <script src='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js'></script>
+		<link href='https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css' rel='stylesheet' />
+		<script src="script/map.js" defer></script> 
+		<script src="script/city.js" defer></script>
+		<script src="script/popup.js" defer></script> 
+	</head>
+
+	<body>
+		<input type="checkbox" id="nav-toggle">
+		<div class="header">
+			<div class="sidebar-logo">
+			<h2><span class="las la-rocket"></span> <span>SpaceX</span> </h2>
+			</div>
+
+			<div class="sidebar-menu">
+				<ul>
+					<li><a href="" class="active"><span class="las la-igloo"></span>
+					<span>Dashboard</span></a>
+					</li>
+					<li><a href=""><span class="las la-users"></span>
+					<span>Customers</span></a>
+					</li>
+					<li><a href=""><span class="las la-clipboard-list"></span>
+					<span>Task</span></a>
+					</li>
+					<li><a href=""><span class="las la-user-circle"></span>
+					<span>Account</span></a>
+					</li>
+					<li><a href=""><span class="las la-user-cog"></span>
+					<span>Setting</span></a>
+					</li>
+				</ul>
+			</div>
+		</div>
+
+		<header>
+				<h3>
+					<label for="nav-toggle">
+						<span class="las la-bars"></span>
+					</label>
+					Dashboard
+				</h3>
+
+				<div class="user-wrapper">
+					<img src="images/Reincarnated.jpg" width="50px" height="50px" alt="user">
+					<div>
+						<h4> Norvienne Kopra </h4>
+						<small> pilot </small>
+					</div>
+				</div>			
+			</header>
+
+		<div class="main-content">
+			<main>
+				<h1>Landingspot Information</h1>
+				<h3>Map + Weather</h3>
+				<h4>Look at the weather from different countries</h4>
+				<div class="cards">
+					<div class="map-content"> <!-- map -->
+						<div id="map"></div>
+					</div>
+				</div>
+			</main>
+
+			<section>
+				<h3>Explore</h3> <!--  horecagelegenheden -->
+				<h4>Catering establishments</h4>
+				<div class="card">
+					<div class="card-single one"> 
+						<h5>Italian Restaurants</h5>
+					</div>
+
+					<div class="card-single two"> 
+						<h5>Italian Restaurants</h5>
+					</div>
+
+					<div class="card-single tree"> 
+						<h5>Italian Restaurants</h5>
+					</div>
+
+					<div class="card-single four"> 
+						<h5>Italian Restaurants</h5>
+					</div>
+				</div>
+			</section>
+		</div>
+
+		<footer>
+			<p class="footer">&copy 2021 &#124; Norvienne Kopra </p>
+		</footer>
+	</body>
+</html>
