@@ -29,27 +29,11 @@
 	    coordinates: [-86.580447, 35.517491]
 	  },
 	  {
-	    name: 'Jackson',
-	    coordinates: [-95.616428, 37.037022]
+	    name: 'Wyoming',
+	    coordinates: [-107.290283, 43.075970]
 	  },
 	  {
-    	name: 'Amsterdam',
-    	coordinates: [4.895168, 52.370216]
-      },
-      {
-    	name: 'London',
-    	coordinates: [-0.127758, 51.507351]
-      },
-      {
-    	name: 'Madrid',
-    	coordinates: [-3.70379, 40.416775]
-      },
-      {
-    	name: 'Dublin',
-    	coordinates: [-6.26031, 53.349805]
-      },
-      {
-    	name: 'Paris',
-    	coordinates: [2.352222, 48.856614]
-      },
+	    name: 'Wisconsin',
+	    coordinates: [-88.787865, 43.784439]
+	  },
 	];

@@ -71,46 +71,55 @@
 		);
 	}
 
-map.on('load', function () {
-  map.addSource('city', {
-    'type': 'geojson',
-    'data': {
-      'type': 'FeatureCollection',
-      'features': location
-    }
+function popupTekstMelding(){
+
+  	map.on('load', function () {
+ 	map.addSource('places', {
+	    'type': 'geojson',
+	    'data': {
+	      'type': 'FeatureCollection',
+	      'features': popupText
+	    }
+  	});
+
+	// Add a layer showing the places.
+	map.addLayer({
+	    'id': 'places',
+	    'type': 'symbol',
+	    'source': 'places',
+	    'layout': {
+	      'icon-image': '{icon}-15',
+	      "icon-size": 1.7,
+	      'icon-allow-overlap': true
+	    }
+	});
+
+	var popup = new mapboxgl.Popup({
+    closeButton: false, 
+    closeOnClick: false 
+  	});
+
+  	map.on('mouseenter', 'places', function (e) {    //als je op de kaart over een van de places gaat, dan kom je bij deze functie terecht 
+    //'e' = dataattribuut van de locatie waar je overheen hovert)
+    var coordinates = e.features[0].geometry.coordinates.slice();   //haalt coordinator op van locatie 
+    var description = e.features[0].properties.description; // haalt beschrijving van bij behorende locatie op
+
+    
+    popup     
+      .setLngLat(coordinates) 
+      .setHTML(description) 
+      .addTo(map);  
+  	});
+
+	// haal popup weg als je weggaat met je muis   
+	map.on('mouseleave', 'places', function () {
+	    popup.remove();
+	  });
   });
+};
 
-  // Add a layer showing the city.
-  map.addLayer({
-    'id': 'city',
-    'type': 'symbol',
-    'source': 'city',
-    'layout': {
-      'icon-image': '{icon}-15',
-      'icon-allow-overlap': true
-    }
-  });
-
-// Create a popup, but don't add it to the map yet.
-  var popup = new mapboxgl.Popup({
-    closeButton: false,
-    closeOnClick: false
-  });
-
-  map.on('mouseenter', 'city', function (e) {
-    var coordinates = e.features[0].geometry.coordinates.slice();
-    var description = e.features[0].properties.description;
-
-    // Populate the popup and set its coordinates based on the feature found.
-    popup.setLngLat(coordinates)
-         .setHTML(description)
-         .addTo(map);
-  });
-
-  map.on('mouseleave', 'city', function () {
-    popup.remove();
-  });
-});
-
+// zoom controls
 var nav = new mapboxgl.NavigationControl();
-	map.addControl(nav, 'top-right');
+map.addControl(nav, 'top-right')
+
+popupTekstMelding();

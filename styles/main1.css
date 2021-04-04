@@ -6,11 +6,10 @@
   box-sizing: border-box;
   list-style-type: none;
   text-decoration: none;
-
+  font-family: 'Poppins', sans-serif;
 }
 
 body {
-  font-family: 'Poppins', sans-serif;
   background-color: #191a1a;
   color: #fff; 
 }
@@ -58,16 +57,76 @@ body {
 		min-height: calc(100vh - 90px);
 	}
 
-	.cards{
-	  display: flex;
-	  margin-top: 0.7rem;
-	  align-items: center;
+	main h3{
+		color: #fff;
+		font-size: 27px;
+		text-align: center;
+		align-items: center;
+		margin-bottom: 0.5rem;
 	}
 
+	
 	#map{
-	  height: 675px;
+	  height: 630px;
 	  width: 100%;
 	}
+
+	
+	strong{
+		color: #feaf1d;
+		font-size: 16px;
+		padding-bottom: 1px 1px;
+	}
+
+	p{
+		color: #222222;
+	}
+
+/*Restaurant card Styling*/
+	.rest-content{
+		min-height: calc(100vh-90px);
+		padding: 2rem 1.5rem;
+	}
+
+	.rest-content h3{
+		text-align: center;
+		align-items: center;
+		font-size: 27px;
+		margin-bottom: 1rem;
+	}
+
+	.cards{
+		display: grid;
+		grid-template-columns: repeat(4, 1fr);
+		grid-gap: 1.7rem;
+		background-color: #191a1a;
+		margin-top: 0.7rem;
+	  	align-items: center;
+	}
+
+	.card-single{
+		background-color:  #191a1a;
+		display: flex;
+		justify-content: space-between;
+		padding: 1.3rem 2rem;
+		border: 1px solid #feaf1d;
+		border-radius: 15px;
+		height: 100px;
+	}
+
+	.card-single h4{
+		color: #feaf1d;
+	}
+
+	.card-single  p{
+		color: #fff;
+	}
+
+	.card-single span{
+		color: #feaf1d;
+		font-size: 3rem;
+	}
+
 
 /*Responsiveness Maken*/
 	@media only screen and (max-width: 960px){
@@ -88,6 +147,10 @@ body {
 		#map{
 		height: 950px;
 		}
+
+		.cards{
+			grid-template-columns: repeat(2, 1fr);
+		}
 	}
 
 	@media only screen and (max-width: 650px){
@@ -102,6 +165,10 @@ body {
 		#map{
 		height: 455px;
 		}
+
+		.cards{
+			grid-template-columns: 100%;
+		}
 	}
 
 	@media only screen and (max-width: 400px){
@@ -113,7 +180,7 @@ body {
 			display: none;
 		}
 
-		h4{
+		header h4{
 			display: none;
 		}
 
