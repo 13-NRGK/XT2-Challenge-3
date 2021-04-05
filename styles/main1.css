@@ -82,6 +82,11 @@ body {
 		color: #222222;
 	}
 
+	.directions-icon{
+		background-color: #feaf1d;
+	}
+
+	
 /*Restaurant card Styling*/
 	.rest-content{
 		min-height: calc(100vh-90px);

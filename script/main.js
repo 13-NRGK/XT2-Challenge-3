@@ -13,6 +13,24 @@
 	  zoom: 3
 	});
 
+
+// Add directions to the map
+	map.addControl(
+		new MapboxDirections ({
+			accessToken: mapboxgl.accessToken
+		}),
+		'top-left'
+	);
+
+// Add searchbar to the map
+	map.addControl(
+		new MapboxGeocoder({
+			accessToken: mapboxgl.accessToken,
+			mapboxgl: mapboxgl
+		}),
+		'top-right'
+	);
+
 	
 // Get weather data and plot on map
 	map.on('load', function () {
@@ -40,7 +58,7 @@
 
 	function plotImageOnMap(icon, city) {
 		map.loadImage(
-    		'http://openweathermap.org/img/w/' + icon + '.png',
+    		'http://openweathermap.org/img/wn/' + icon + '.png',
     		function (error, image) {
 		      	if (error) throw error;
 		      	map.addImage("weatherIcon_" + city.name, image);
@@ -64,7 +82,7 @@
 			        source: "point_" + city.name,
 			        layout: {
 			          "icon-image": "weatherIcon_" + city.name,
-			          "icon-size": 1.7
+			          "icon-size": 1.3
 			        }
 		     	});
 		    }
@@ -120,6 +138,6 @@ function popupTekstMelding(){
 
 // zoom controls
 var nav = new mapboxgl.NavigationControl();
-map.addControl(nav, 'top-right')
+map.addControl(nav, 'bottom-right')
 
 popupTekstMelding();
