@@ -132,7 +132,7 @@ body {
 		font-size: 3rem;
 	}
 
-
+	
 /*Responsiveness Maken*/
 	@media only screen and (max-width: 960px){
 		header h3{
